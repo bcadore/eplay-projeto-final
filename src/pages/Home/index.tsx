@@ -33,7 +33,7 @@ export type Game = {
   media: {
     thumbnail: string
     cover: string
-    gallery: GalleryItem
+    gallery: GalleryItem[]
   }
 }
 

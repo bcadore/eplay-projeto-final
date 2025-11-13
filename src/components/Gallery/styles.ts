@@ -78,6 +78,10 @@ export const ModalContent = styled.div`
     }
   }
 
+  > img {
+    width: 100%;
+  }
+
   img,
   iframe {
     display: block;
@@ -86,6 +90,6 @@ export const ModalContent = styled.div`
 
   iframe {
     width: 100%;
-    height: 460px;
+    height: 480px;
   }
 `
