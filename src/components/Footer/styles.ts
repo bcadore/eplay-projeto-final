@@ -4,7 +4,6 @@ import { cores } from '../../styles'
 export const Container = styled.footer`
   background-color: ${cores.cinza};
   padding: 32px 0;
-  margin-top: 80px;
   font-size: 14px;
 `
 
