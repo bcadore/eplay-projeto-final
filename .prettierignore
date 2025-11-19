@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+package-lock.json
+yarn.lock
+
+# Build outputs
+build
+dist
+.next
+out
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+
+# Public assets (imagens, etc)
+public/**/*.png
+public/**/*.jpg
+public/**/*.jpeg
+public/**/*.gif
+public/**/*.svg
+public/**/*.ico
+
+# Config files that shouldn't be formatted
+*.config.js
+*.config.ts
+

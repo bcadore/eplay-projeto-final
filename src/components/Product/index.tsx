@@ -31,7 +31,7 @@ const Product = ({
     <Card to={`/product/${id}`}>
       <img src={image} alt={title} />
       <Infos>
-        {infos.map((info) => (
+        {infos.map(info => (
           <Tag key={info}>{info}</Tag>
         ))}
       </Infos>

@@ -13,8 +13,8 @@ const Product = () => {
   const [game, setGame] = useState<Game>()
 
   useEffect(() => {
-    fetch(`https://api-ebac.vercel.app/api/eplay/jogos/${id}`).then((res) =>
-      res.json().then((res) => setGame(res))
+    fetch(`https://api-ebac.vercel.app/api/eplay/jogos/${id}`).then(res =>
+      res.json().then(res => setGame(res))
     )
   }, [id])
 

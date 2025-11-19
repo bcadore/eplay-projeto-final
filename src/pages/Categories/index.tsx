@@ -16,24 +16,24 @@ const Categories = () => {
   const [gamesRpg, setGamesRpg] = useState<Game[]>([])
 
   useEffect(() => {
-    fetch('https://api-ebac.vercel.app/api/eplay/acao').then((res) =>
-      res.json().then((res) => setGamesAcao(res))
+    fetch('https://api-ebac.vercel.app/api/eplay/acao').then(res =>
+      res.json().then(res => setGamesAcao(res))
     )
 
-    fetch('https://api-ebac.vercel.app/api/eplay/esportes').then((res) =>
-      res.json().then((res) => setGamesEsportes(res))
+    fetch('https://api-ebac.vercel.app/api/eplay/esportes').then(res =>
+      res.json().then(res => setGamesEsportes(res))
     )
 
-    fetch('https://api-ebac.vercel.app/api/eplay/simulacao').then((res) =>
-      res.json().then((res) => setGamesSimulacao(res))
+    fetch('https://api-ebac.vercel.app/api/eplay/simulacao').then(res =>
+      res.json().then(res => setGamesSimulacao(res))
     )
 
-    fetch('https://api-ebac.vercel.app/api/eplay/luta').then((res) =>
-      res.json().then((res) => setGamesLuta(res))
+    fetch('https://api-ebac.vercel.app/api/eplay/luta').then(res =>
+      res.json().then(res => setGamesLuta(res))
     )
 
-    fetch('https://api-ebac.vercel.app/api/eplay/rpg').then((res) =>
-      res.json().then((res) => setGamesRpg(res))
+    fetch('https://api-ebac.vercel.app/api/eplay/rpg').then(res =>
+      res.json().then(res => setGamesRpg(res))
     )
   }, [])
 

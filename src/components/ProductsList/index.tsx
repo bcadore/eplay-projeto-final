@@ -38,7 +38,7 @@ const ProductsList = ({ background, title, games }: Props) => {
       <div className="container">
         <h2>{title}</h2>
         <List>
-          {games.map((game) => (
+          {games.map(game => (
             <li key={game.id}>
               <Product
                 id={game.id}

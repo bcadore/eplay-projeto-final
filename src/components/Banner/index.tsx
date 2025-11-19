@@ -11,8 +11,8 @@ const Banner = () => {
   const [game, setGame] = useState<Game>()
 
   useEffect(() => {
-    fetch('https://api-ebac.vercel.app/api/eplay/destaque').then((res) =>
-      res.json().then((res) => setGame(res))
+    fetch('https://api-ebac.vercel.app/api/eplay/destaque').then(res =>
+      res.json().then(res => setGame(res))
     )
   }, [])
 
