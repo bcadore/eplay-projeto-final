@@ -3,53 +3,43 @@ import { useEffect, useState } from 'react'
 import ProductsList from '../../components/ProductsList'
 import { Game } from '../Home'
 
+import {
+  useGetActionGamesQuery,
+  useGetFeaturedGameQuery,
+  useGetFightGamesQuery,
+  useGetRpgGamesQuery,
+  useGetSimulationGamesQuery,
+  useGetSportGamesQuery
+} from '../../services/api'
 import resident from '../../assets/images/resident.png'
 import diablo from '../../assets/images/diablo.png'
 import starWars from '../../assets/images/star_wars.png'
 import zelda from '../../assets/images/zelda.png'
 
 const Categories = () => {
-  const [gamesAcao, setGamesAcao] = useState<Game[]>([])
-  const [gamesEsportes, setGamesEsportes] = useState<Game[]>([])
-  const [gamesSimulacao, setGamesSimulacao] = useState<Game[]>([])
-  const [gamesLuta, setGamesLuta] = useState<Game[]>([])
-  const [gamesRpg, setGamesRpg] = useState<Game[]>([])
+  const { data: actionGames } = useGetActionGamesQuery()
+  const { data: fightGames } = useGetFightGamesQuery()
+  const { data: rpgGames } = useGetRpgGamesQuery()
+  const { data: simulationGames } = useGetSimulationGamesQuery()
+  const { data: sportsGames } = useGetSportGamesQuery()
 
-  useEffect(() => {
-    fetch('https://api-ebac.vercel.app/api/eplay/acao').then(res =>
-      res.json().then(res => setGamesAcao(res))
+  if (actionGames && fightGames && rpgGames && simulationGames && sportsGames) {
+    return (
+      <>
+        <ProductsList title="Ação" background="black" games={actionGames} />
+        <ProductsList title="Esportes" background="gray" games={sportsGames} />
+        <ProductsList
+          title="Simulação"
+          background="black"
+          games={simulationGames}
+        />
+        <ProductsList title="Luta" background="gray" games={fightGames} />
+        <ProductsList title="RPG" background="black" games={rpgGames} />
+      </>
     )
+  }
 
-    fetch('https://api-ebac.vercel.app/api/eplay/esportes').then(res =>
-      res.json().then(res => setGamesEsportes(res))
-    )
-
-    fetch('https://api-ebac.vercel.app/api/eplay/simulacao').then(res =>
-      res.json().then(res => setGamesSimulacao(res))
-    )
-
-    fetch('https://api-ebac.vercel.app/api/eplay/luta').then(res =>
-      res.json().then(res => setGamesLuta(res))
-    )
-
-    fetch('https://api-ebac.vercel.app/api/eplay/rpg').then(res =>
-      res.json().then(res => setGamesRpg(res))
-    )
-  }, [])
-
-  return (
-    <>
-      <ProductsList title="Ação" background="black" games={gamesAcao} />
-      <ProductsList title="Esportes" background="gray" games={gamesEsportes} />
-      <ProductsList
-        title="Simulação"
-        background="black"
-        games={gamesSimulacao}
-      />
-      <ProductsList title="Luta" background="gray" games={gamesLuta} />
-      <ProductsList title="RPG" background="black" games={gamesRpg} />
-    </>
-  )
+  return <h4>Carregando..</h4>
 }
 
 export default Categories
