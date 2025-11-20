@@ -4,6 +4,7 @@ export const cores = {
   branco: '#EEE',
   preto: '#111',
   cinza: '#333',
+  cinzaClaro: '#fafafa',
   verde: '#10AC84'
 }
 
