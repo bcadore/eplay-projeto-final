@@ -1,47 +1,53 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled(Link)`
-  background-color: ${cores.cinza};
-  border-radius: 8px;
-  padding: 8px;
-  position: relative;
-  text-decoration: none;
-  color: ${cores.branco};
   display: block;
+  position: relative;
+  padding: 0.5rem;
+  background-color: ${cores.cinza};
+  color: ${cores.branco};
+  border-radius: 0.5rem;
+  text-decoration: none;
+  height: 100%;
 
   img {
     display: block;
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    object-fit: fill;
+    max-height: 14rem;
+    height: 100%;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      max-height: 13rem;
+    }
   }
 
   ${TagContainer} {
-    margin-right: 8px;
+    margin-right: 0.25rem;
   }
 `
 
 export const Titulo = styled.h3`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
   display: block;
-  margin-top: 16px;
-  margin-bottom: 8px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 `
 
 export const Descricao = styled.p`
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
   display: block;
-  margin-top: 16px;
+  margin-top: 0.5rem;
   text-align: justify;
 `
 
 export const Infos = styled.div`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 1rem;
+  right: 1rem;
 `

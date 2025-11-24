@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+import { cores } from '../../styles'
 
 export const ListItens = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 `
 
 export const Action = styled.div`
@@ -20,10 +23,9 @@ export const Action = styled.div`
 
 export const Itens = styled.li`
   position: relative;
-  margin-right: 16px;
 
   > img {
-    border: 2px;
+    border: 2px solid ${cores.branco};
     border-radius: 8px;
     width: 150px;
     height: 150px;

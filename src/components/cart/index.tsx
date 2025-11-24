@@ -1,7 +1,5 @@
 import Button from '../Button'
 
-import starWars from '../../assets/images/star_wars.png'
-
 import {
   CartContainer,
   CartItem,
@@ -26,6 +24,7 @@ const Cart = () => {
 
   const totalPrice = () => {
     return items.reduce((acumulador, valorAtual) => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       return (acumulador += valorAtual.prices.current!)
     }, 0)
   }
