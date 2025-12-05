@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react'
 import Button from '../../components/Button'
 import Card from '../../components/Card'
@@ -7,9 +9,13 @@ import barCodeImg from '../../assets/images/barcode.png'
 import creditCardImg from '../../assets/images/credit-card.png'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { usePurchaseMutation } from '../../services/api'
 
 const Checkout = () => {
   const [payWithCard, setPayWithCard] = useState(false)
+
+  const [purchase, { isLoading, isError, data }] = usePurchaseMutation()
+
   const form = useFormik({
     initialValues: {
       fullName: '',
@@ -89,8 +95,34 @@ const Checkout = () => {
       )
     }),
     onSubmit: values => {
-      console.log('Formulário validado e enviado:', values)
-      alert('Compra finalizada com sucesso!')
+      purchase({
+        billing: {
+          name: values.fullName,
+          email: values.email,
+          document: values.cpf
+        },
+        delivery: {
+          email: values.deliveryEmail
+        },
+        payment: {
+          installments: 1,
+          card: {
+            active: payWithCard,
+            code: Number(values.cardCode),
+            name: values.cardDisplayName,
+            number: values.cardNumber,
+            owner: {
+              document: values.cpfCardOwner,
+              name: values.cardOwner
+            },
+            expiry: {
+              month: Number(values.expiresMonth),
+              year: Number(values.expiresYear)
+            }
+          }
+        },
+        products: [{ id: 1, price: 10 }]
+      })
     }
   })
 
