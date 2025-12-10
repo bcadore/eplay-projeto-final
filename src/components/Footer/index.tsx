@@ -1,85 +1,79 @@
-import {
-  Container,
-  FooterSection,
-  LinkItem,
-  LinksList,
-  SectionTitle
-} from './styles'
+import * as S from './styles'
 
 const currentYear = new Date().getFullYear()
 
 const Footer = () => (
-  <Container>
+  <S.Container>
     <div className="container">
-      <FooterSection>
-        <SectionTitle>Categorias</SectionTitle>
-        <LinksList>
+      <S.FooterSection>
+        <S.SectionTitle>Categorias</S.SectionTitle>
+        <S.LinksList>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar jogos de RPG"
               to="/categories#rpg"
             >
               RPG
-            </LinkItem>
+            </S.LinkItem>
           </li>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar jogos de ação"
               to="/categories#action"
             >
               Ação
-            </LinkItem>
+            </S.LinkItem>
           </li>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar jogos de esportes"
               to="/categories#sports"
             >
               Esportes
-            </LinkItem>
+            </S.LinkItem>
           </li>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar jogos de simulação"
               to="/categories#simulation"
             >
               Simulação
-            </LinkItem>
+            </S.LinkItem>
           </li>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar jogos de luta"
               to="/categories#fight"
             >
               Luta
-            </LinkItem>
+            </S.LinkItem>
           </li>
-        </LinksList>
-      </FooterSection>
-      <FooterSection>
-        <SectionTitle>Acesso Rápido</SectionTitle>
-        <LinksList>
+        </S.LinksList>
+      </S.FooterSection>
+      <S.FooterSection>
+        <S.SectionTitle>Acesso Rápido</S.SectionTitle>
+        <S.LinksList>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar a seção de promoções"
               to="/#on-sale"
             >
               Promoções
-            </LinkItem>
+            </S.LinkItem>
           </li>
           <li>
-            <LinkItem
+            <S.LinkItem
               title="Clique aqui para acessar a seção de em breve"
               to="/#coming-soon"
             >
               Em Breve
-            </LinkItem>
+            </S.LinkItem>
           </li>
-        </LinksList>
-      </FooterSection>
+        </S.LinksList>
+      </S.FooterSection>
       <p>{currentYear} - &copy; EPLAY Todos os direitos reservados.</p>
     </div>
-  </Container>
+  </S.Container>
 )
 
 export default Footer
