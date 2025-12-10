@@ -15,19 +15,44 @@ const Footer = () => (
         <SectionTitle>Categorias</SectionTitle>
         <LinksList>
           <li>
-            <LinkItem to="/categories#rpg">RPG</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar jogos de RPG"
+              to="/categories#rpg"
+            >
+              RPG
+            </LinkItem>
           </li>
           <li>
-            <LinkItem to="/categories#action">Ação</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar jogos de ação"
+              to="/categories#action"
+            >
+              Ação
+            </LinkItem>
           </li>
           <li>
-            <LinkItem to="/categories#sports">Esportes</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar jogos de esportes"
+              to="/categories#sports"
+            >
+              Esportes
+            </LinkItem>
           </li>
           <li>
-            <LinkItem to="/categories#simulation">Simulação</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar jogos de simulação"
+              to="/categories#simulation"
+            >
+              Simulação
+            </LinkItem>
           </li>
           <li>
-            <LinkItem to="/categories#fight">Luta</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar jogos de luta"
+              to="/categories#fight"
+            >
+              Luta
+            </LinkItem>
           </li>
         </LinksList>
       </FooterSection>
@@ -35,10 +60,20 @@ const Footer = () => (
         <SectionTitle>Acesso Rápido</SectionTitle>
         <LinksList>
           <li>
-            <LinkItem to="/#on-sale">Promoções</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar a seção de promoções"
+              to="/#on-sale"
+            >
+              Promoções
+            </LinkItem>
           </li>
           <li>
-            <LinkItem to="/#coming-soon">Em Breve</LinkItem>
+            <LinkItem
+              title="Clique aqui para acessar a seção de em breve"
+              to="/#coming-soon"
+            >
+              Em Breve
+            </LinkItem>
           </li>
         </LinksList>
       </FooterSection>
